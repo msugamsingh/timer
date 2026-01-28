@@ -2,6 +2,12 @@
 
 A polished and functional Break Timer application built with Flutter, designed to help users manage their break times effectively. The app features a modern UI with smooth animations, customizable timer settings, and a robust architecture.
 
+## 📸 Screenshots
+
+| Home | Timer Running | Bottom Sheet | Settings |
+|:---:|:---:|:---:|:---:|
+| <img src="assets/screenshots/ss_home.png" width="200" /> | <img src="assets/screenshots/ss_timer_running.png" width="200" /> | <img src="assets/screenshots/ss_bottomsheet.png" width="200" /> | <img src="assets/screenshots/ss_settings.png" width="200" /> |
+
 ## 🌟 Features
 
 -   **Customizable Timer:** Choose from preset durations (10, 15, 30, 45, 60 minutes) to suit your break needs.
@@ -11,14 +17,32 @@ A polished and functional Break Timer application built with Flutter, designed t
 -   **Status Timeline:** A visual timeline tracking your session status (Login, Lunch in Progress, Logout).
 -   **Smart Notifications:** Confirmation prompts prevent accidental break cancellations.
 -   **Theming:** Centralized design system with custom `ThemeExtension` for consistent colors and typography.
+-   **60 FPS Performance:** Engineered for constant 60fps performance with smooth animations throughout the app.
 
-## 🛠️ Tech Stack
+> **Note:** A simplified version of the timer page without the collapsing app bar behavior is also available (`lib/timer/presentation/view/timer_page_simple.dart`), providing a standard scrolling layout alternative.
+
+## 🛠️ Tech Stack & Tools
 
 -   **Flutter:** UI Toolkit.
 -   **Bloc / Cubit:** State Management for predictable state changes and business logic separation.
 -   **Equatable:** Value equality for efficient state comparison.
 -   **Intl:** Date and time formatting.
 -   **Bloc Test & Mocktail:** Comprehensive unit and widget testing.
+-   **Gemini CLI:** AI-powered development assistance.
+-   **Dart DevTools:** Performance tuning and debugging.
+-   **Dart MCP:** Modular Control Protocol for tool integration.
+
+## 🧪 Testing
+
+The project includes a comprehensive suite of tests to ensure reliability and correctness:
+
+-   **Unit Tests (`test/timer/bloc/`):** Verifies the `TimerCubit` logic, including state transitions for starting, pausing, resetting, and dynamic duration adjustments.
+-   **Widget Tests (`test/timer/view/`):** Ensures the UI correctly reflects the state, handles user interactions (like button taps and bottom sheets), and renders critical components correctly.
+
+To run all tests:
+```bash
+flutter test
+```
 
 ## 📂 Project Structure
 
@@ -37,6 +61,14 @@ lib/
 │   └── app_theme.dart      # ThemeData & Extensions
 └── main.dart               # Entry Point
 ```
+
+
+## 🎨 Design Highlights
+
+-   **Overlapping UI:** The `TimerCard` visually overlaps the app bar for a layered, depth-rich effect.
+-   **Animations:** `TweenAnimationBuilder` ensures the timer progress arc animates smoothly (60 FPS).
+-   **Consistent Styling:** All colors and text styles are derived from `Theme.of(context)`, making the app easy to maintain and skin.
+
 
 ## 🚀 Getting Started
 
@@ -86,9 +118,3 @@ flutter build appbundle --release
 ```bash
 flutter build ios --release
 ```
-
-## 🎨 Design Highlights
-
--   **Overlapping UI:** The `TimerCard` visually overlaps the app bar for a layered, depth-rich effect.
--   **Animations:** `TweenAnimationBuilder` ensures the timer progress arc animates smoothly (60 FPS).
--   **Consistent Styling:** All colors and text styles are derived from `Theme.of(context)`, making the app easy to maintain and skin.
